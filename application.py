@@ -1,5 +1,8 @@
 from flask import Flask, redirect, render_template, url_for, request
 import os
+import smtplib
+import pandas
+import time
 
 app = Flask(__name__)
 
@@ -55,8 +58,8 @@ def send():
 	target = os.path.join(app_root, 'files')
 	filename = request.form.get("file")
 
-	return filename
-	'''
+	#return filename
+	
 	# sending mails code
 	file = pandas.read_csv("/".join([target, filename]))
 
@@ -78,7 +81,7 @@ def send():
 	    print(str(i),"\n")  
 	    time.sleep(60)
 
-server.quit()
+	server.quit()
 
-	return ("sending mails")
-	'''
+	return ("Mails sent successfully!")
+	
