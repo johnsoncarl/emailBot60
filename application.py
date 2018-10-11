@@ -52,4 +52,33 @@ def upload():
 @app.route("/send", methods=["POST"])
 def send():
 	
+	target = os.path.join(app_root, 'files')
+	filename = request.form.get("file")
+
+	return filename
+	'''
+	# sending mails code
+	file = pandas.read_csv("/".join([target, filename]))
+
+	file = file.values
+
+
+	server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+	server.login("man11invisible", "12345@@@@@")
+
+	#server = smtplib.SMTP_SSL('smtp.ipage.com', 465)
+	#server.login("sharmahrishabh@cevgroup.org", "CEVgroup123")
+
+	for i in file:
+	    
+	    server.sendmail(
+	      "sharmahrishabh@cevgroup.org", 
+	      i, 
+	      "Hello! keep up with you good work.")
+	    print(str(i),"\n")  
+	    time.sleep(60)
+
+server.quit()
+
 	return ("sending mails")
+	'''
