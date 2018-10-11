@@ -51,5 +51,5 @@ def upload():
 
 @app.route("/send", methods=["POST"])
 def send():
-	if request.
-	return print("sending mails")
+	
+	return ("sending mails")
